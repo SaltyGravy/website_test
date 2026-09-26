@@ -1,3 +1,6 @@
+Here's the full code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,4 +137,285 @@
   }
 
   /* ---------- SECTION SHELL ---------- */
-  section{ padding:54px
+  section{ padding:54px 0; border-top:1px solid var(--rule); }
+  section > .head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:30px;
+  }
+  section > .head .num{
+    font-family:"IBM Plex Mono", monospace; font-size:13px; color:var(--gold);
+  }
+  section > .head h2{
+    font-family:"Fraunces", serif; font-weight:600;
+    font-size:28px; margin:0; color:var(--ink);
+  }
+
+  /* ---------- SUMMARY ---------- */
+  .summary p{ max-width:66ch; font-size:17px; color:var(--ink-soft); }
+  .summary p strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------- PROJECTS ---------- */
+  .project{
+    border:1px solid var(--rule);
+    background:var(--card);
+    padding:26px 28px;
+    margin-bottom:22px;
+  }
+  .project.flagship{ border-color:var(--teal); border-width:1.5px; }
+  .project .row1{
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;
+    margin-bottom:6px;
+  }
+  .project h3{ font-family:"Fraunces", serif; font-size:21px; font-weight:600; margin:0; color:var(--ink); }
+  .project .tag{
+    font-family:"IBM Plex Mono", monospace; font-size:11.5px; color:var(--teal-deep);
+    background:color-mix(in srgb, var(--teal) 14%, transparent);
+    padding:3px 9px;
+  }
+  .project .meta{ font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--ink-soft); margin:0 0 14px; }
+  .project ul{ margin:0 0 12px; padding-left:20px; color:var(--ink); }
+  .project li{ margin-bottom:6px; font-size:15.5px; }
+  .project .tech{ font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--ink-soft); border-top:1px dashed var(--rule); padding-top:10px; margin-top:12px;}
+  .project .tech b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- HACKATHONS ---------- */
+  .hlist{ display:grid; gap:12px; }
+  .hitem{
+    display:grid; grid-template-columns:96px 1fr; gap:16px;
+    padding:14px 0; border-bottom:1px solid var(--rule);
+    align-items:baseline;
+  }
+  .hitem:last-child{ border-bottom:none; }
+  .hitem .status{ font-family:"IBM Plex Mono", monospace; font-size:11.5px; color:var(--gold); }
+  .hitem .status.shortlisted{ color:var(--teal-deep); font-weight:600; }
+  .hitem .desc strong{ color:var(--ink); }
+  .hitem .desc{ color:var(--ink-soft); font-size:15px; }
+
+  /* ---------- SKILLS ---------- */
+  .skillgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:26px; }
+  .skillgrid h4{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--teal-deep);
+    margin:0 0 10px; font-weight:600;
+  }
+  .skillgrid .pills{ display:flex; flex-wrap:wrap; gap:8px; }
+  .skillgrid .pill{
+    font-size:14px; padding:5px 12px;
+    border:1px solid var(--rule); color:var(--ink);
+  }
+  .skillgrid .pill.core{ border-color:var(--teal); }
+
+  /* ---------- CERTS + LEADERSHIP ---------- */
+  .flatlist{ list-style:none; margin:0; padding:0; }
+  .flatlist li{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:12px 0; border-bottom:1px solid var(--rule);
+    font-size:15.5px;
+  }
+  .flatlist li:last-child{ border-bottom:none; }
+  .flatlist .src{ font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--ink-soft); white-space:nowrap; }
+
+  footer{
+    padding:44px 0 56px;
+    font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+  }
+  footer a{ color:var(--teal-deep); }
+
+  @media (max-width:600px){
+    .hitem{ grid-template-columns:1fr; gap:2px; }
+    section{ padding:40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="bar">
+    <span class="mark">A.KUMAR // PROFILE</span>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" style="border-top:none;">
+    <p class="kicker">B.Tech Information Technology — 2nd Year — Mumbai, India</p>
+    <h1>Archit<br>Kumar</h1>
+    <p class="lede">I build software that solves an actual problem someone has — routes, attendance, money — and I'm currently shipping <strong style="color:var(--ink)">WiseWay</strong>, a safety-navigation platform shortlisted for Smart India Hackathon 2026.</p>
+    <div class="contact-row">
+      <a href="mailto:architkumar522@gmail.com">architkumar522@gmail.com</a>
+      <span>+91 83560 28780</span>
+      <a href="https://www.linkedin.com/in/archit-kumar-1014241ab/" target="_blank" rel="noopener">linkedin.com/in/archit-kumar</a>
+    </div>
+  </section>
+
+  <section class="route" style="border-top:none;">
+    <div class="route-scroll">
+      <svg viewBox="0 0 760 130" role="img" aria-label="Timeline from 2025 to Smart India Hackathon 2026 shortlist">
+        <path class="route-path" d="M20,90 C 140,90 160,40 260,40 S 380,95 460,95 S 580,35 660,35 S 700,60 740,60" />
+
+        <g class="node" transform="translate(20,90)">
+          <circle r="5"/>
+          <text class="label" x="0" y="-14" text-anchor="middle">B.Tech starts</text>
+          <text class="date" x="0" y="24" text-anchor="middle">2025</text>
+        </g>
+        <g class="node" transform="translate(260,40)">
+          <circle r="5"/>
+          <text class="label" x="0" y="-14" text-anchor="middle">EduAssist</text>
+          <text class="date" x="0" y="24" text-anchor="middle">built</text>
+        </g>
+        <g class="node" transform="translate(460,95)">
+          <circle r="5"/>
+          <text class="label" x="0" y="24" text-anchor="middle">Artha</text>
+          <text class="date" x="0" y="42" text-anchor="middle">built</text>
+        </g>
+        <g class="node milestone" transform="translate(660,35)">
+          <circle r="6.5"/>
+          <text class="label" x="0" y="-16" text-anchor="middle" font-weight="600">SIH 2026 shortlist</text>
+          <text class="date" x="0" y="22" text-anchor="middle">WiseWay</text>
+        </g>
+        <g class="node" transform="translate(740,60)">
+          <circle r="4"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="summary">
+    <div class="head"><span class="num">01</span><h2>Summary</h2></div>
+    <p>Second-year <strong>B.Tech Information Technology</strong> student with hands-on experience building full-stack web and mobile applications. Shortlisted to represent <strong>Thakur College of Engineering and Technology</strong> at <strong>Smart India Hackathon (SIH) 2026</strong>. Comfortable with Python, Java, JavaScript, and SQL, with a growing interest in AI-assisted development and applied problem-solving. Active hackathon participant looking for an internship to build on these skills in a real engineering environment.</p>
+  </section>
+
+  <section id="projects">
+    <div class="head"><span class="num">02</span><h2>Projects</h2></div>
+
+    <div class="project flagship">
+      <div class="row1">
+        <h3>WiseWay</h3>
+        <span class="tag">SIH 2026 — Shortlisted</span>
+      </div>
+      <p class="meta">Intelligent Safe-Route Navigation System · Team Binary Bharat · Theme: Smart Cities &amp; Urban Innovation and Disaster Management</p>
+      <ul>
+        <li>Shortlisted to represent the college at SIH 2026 with a journey-safety platform for women and vulnerable groups.</li>
+        <li>Designed passive distress detection that flags route deviation and unusual inactivity — no manual SOS trigger required.</li>
+        <li>Built a guardian-connectivity feature for live location sharing via SMS/web link, with no app install needed for the guardian.</li>
+        <li>Developed an adaptive safety-scoring model factoring in time of day, location, and verified community reports, with inclusive modes for child, elderly, and accessibility needs.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> Flutter/Dart, Python (FastAPI), MySQL, Google Maps &amp; OpenStreetMap APIs, Firebase Cloud Messaging, Twilio</p>
+    </div>
+
+    <div class="project">
+      <div class="row1"><h3>EduAssist</h3></div>
+      <p class="meta">Smart Classroom &amp; Attendance System</p>
+      <ul>
+        <li>Built a full-stack smart classroom and attendance platform with 3 role-based portals for students, faculty, and administrators.</li>
+        <li>Implemented secure QR attendance with a configurable 5–60 second rotation interval and device-registration limits.</li>
+        <li>Automated department- and section-wise reporting with one-click Excel export, replacing manual attendance sheets.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> TypeScript, Next.js, React, Turso/libSQL, Drizzle ORM, ExcelJS, Vercel</p>
+    </div>
+
+    <div class="project">
+      <div class="row1"><h3>Artha</h3></div>
+      <p class="meta">Personal Finance &amp; Investment Tracker</p>
+      <ul>
+        <li>Developed a full-stack finance dashboard to track bank balances, transactions, investments, and portfolio returns.</li>
+        <li>Built parsers to import multi-bank statements, mutual fund reports, and broker holdings from PDF, CSV, and Excel files.</li>
+        <li>Integrated live market-price updates to calculate portfolio value, invested amount, and profit/loss.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> TypeScript, React Native (Expo), Node.js, Fastify, PostgreSQL, Prisma, Vercel</p>
+    </div>
+  </section>
+
+  <section id="hackathons">
+    <div class="head"><span class="num">03</span><h2>Hackathons &amp; Achievements</h2></div>
+    <div class="hlist">
+      <div class="hitem">
+        <span class="status shortlisted">Shortlisted</span>
+        <span class="desc"><strong>Smart India Hackathon (SIH) 2026</strong> — representing college as part of Team Binary Bharat</span>
+      </div>
+      <div class="hitem">
+        <span class="status">Participant</span>
+        <span class="desc"><strong>Hackfest Innov8 Tmrw</strong> — CESA, Vidyalankar Institute of Technology (VIT), Mumbai</span>
+      </div>
+      <div class="hitem">
+        <span class="status">Participant</span>
+        <span class="desc"><strong>S.P.I.T Hackathon 2026</strong> — Sardar Patel Institute of Technology, Mumbai</span>
+      </div>
+      <div class="hitem">
+        <span class="status">Participant</span>
+        <span class="desc"><strong>PIXXELhack 2.0</strong> (National-level Webathon) — TCET ACM SIGITE Student Chapter</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="head"><span class="num">04</span><h2>Skills</h2></div>
+    <div class="skillgrid">
+      <div>
+        <h4>Languages</h4>
+        <div class="pills">
+          <span class="pill core">Python</span>
+          <span class="pill core">Java</span>
+          <span class="pill core">JavaScript</span>
+          <span class="pill core">C</span>
+          <span class="pill core">SQL</span>
+        </div>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <div class="pills">
+          <span class="pill">Git / GitHub</span>
+          <span class="pill">deepening Java</span>
+        </div>
+      </div>
+      <div>
+        <h4>Exposure through projects</h4>
+        <div class="pills">
+          <span class="pill">React / Next.js</span>
+          <span class="pill">Flutter</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Vercel deployment</span>
+        </div>
+      </div>
+      <div>
+        <h4>Strengths</h4>
+        <div class="pills">
+          <span class="pill">Entrepreneurial thinking</span>
+          <span class="pill">Team leadership</span>
+          <span class="pill">Communication</span>
+          <span class="pill">Time management</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">05</span><h2>Certifications</h2></div>
+    <ul class="flatlist">
+      <li><span>Deloitte Australia — Data Analytics Job Simulation</span><span class="src">Forage</span></li>
+      <li><span>SQL (Basic) — Certified</span><span class="src">HackerRank · Aug 2026</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="head"><span class="num">06</span><h2>Leadership &amp; Extracurricular</h2></div>
+    <ul class="flatlist">
+      <li><span><strong>Teaching Initiative</strong> — educated school support staff in foundational digital and learning skills as part of a grassroots community-education drive</span><span class="src">Social Impact Drive, Mumbai</span></li>
+    </ul>
+  </section>
+
+  <footer id="contact">
+    <span>Archit Kumar — Mumbai, India</span>
+    <span><a href="mailto:architkumar522@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/archit-kumar-1014241ab/" target="_blank" rel="noopener">LinkedIn</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
+```
